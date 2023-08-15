@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Container, Form } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <h4>React Hook Form</h4>
+      <Form>
+        <Form.Group className="mb-3">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Enter password" />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>ประเภทสมาชิก</Form.Label>
+          <Form.Select>
+            <option value="1" selected>
+              ทั่วไป
+            </option>
+            <option value="2">VIP</option>
+            <option value="3">ผู้ดูแลระบบ</option>
+          </Form.Select>
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Check type="checkbok" label="Remember me" />
+        </Form.Group>
+        <Button type="submit">Submit</Button>
+      </Form>
+    </Container>
   );
 }
 
